@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Projeto FullStack - Aplicação de Consulta de Clima
+## Este é um projeto fullstack que consulta a previsão do tempo para cidades utilizando uma API externa (Watherbit) e exibe os resultados em uma interface web desenvolvida com React. O backend foi construído com Spring Boot, enquanto o frontend foi implementado em React.
+#### Esse projeto foi desenvolvido para fins educacionais para a aplicação de 
+#### tecnologias e frameworks como Java, SpringBoot, React, JavaScript, Docker.
+### É um projeto piloto que está em fase de desenvolvimento.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Funcionalidades
+* Consultar a previsão do tempo para qualquer cidade.
+* Exibir dados climáticos como temperatura, umidade e velocidade do vento.
+* Exibir sugestões de vestimenta com base na temperatura.
 
-## Available Scripts
+### Tecnologias Utilizadas
 
-In the project directory, you can run:
+* Backend
+Java 17
+Spring Boot
+Maven
+OpenWeather API
 
-### `npm start`
+* Frontend
+React
+Axios para fazer chamadas HTTP.
+CSS para estilização da interface.
+* 
+Pré-requisitos:
+Java 17 ou superior.
+Node.js e npm (ou yarn) instalados.
+Uma chave de API.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configuração do Backend
+Clone o Repositório
+git clone https://github.com/Wil-JC-Pimenta/ApiFabri.git
 
-### `npm test`
+Entre no Diretório do Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Configure a Chave da API
 
-### `npm run build`
+Execute a Aplicação
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use o Maven para compilar e iniciar o backend:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+mvn spring-boot:run
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+O backend estará disponível em: http://localhost:8080.
 
-### `npm run eject`
+Endpoints
+GET /weather?city={nomeDaCidade}: Retorna informações climáticas da cidade solicitada.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**********
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Configuração do Frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Clone o Repositório
 
-## Learn More
+git clone https://github.com/Wil-JC-Pimenta/ApiFabri-Front-End.git
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Entre no Diretório do Frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Instale as Dependências
 
-### Code Splitting
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* Inicie o Servidor de Desenvolvimento
 
-### Analyzing the Bundle Size
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+### Exemplo de arquitetura de pastas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+projeto-fullstack-clima/
+├── backend/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/
+│   │   │   │   └── br/com/fabriclima/apiFabri/
+│   │   │   │       ├── controller/      # Controladores REST
+│   │   │   │       ├── service/          # Serviços
+│   │   │   └── resources/
+│   │       └── application.properties   # Configurações de API
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   │   └── Weather.js               # Componente de clima
+│   │   ├── App.js                       # Componente principal
+│   ├── public/
+│   │   └── index.html                   # Arquivo HTML principal
+├── README.md
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### No arquivo src/main/resources/application.properties, adicione sua chave da API:
