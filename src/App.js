@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Weather from './components/Weather';
 import styled from 'styled-components';
 
@@ -38,18 +38,24 @@ const Button = styled.button`
 `;
 
 function App() {
-  const [city, setCity] = useState('');
-  const [weatherData, setWeatherData] = useState('Carregando dados...');
+  const [city, setCity] = useState(''); // Estado para a cidade inserida
+  const [weatherData, setWeatherData] = useState('Carregando dados...'); // Estado para os dados climáticos
 
-  const fetchWeather = async () => {
+  // Função para buscar o clima de uma cidade específica
+  const fetchWeather = async (cidade) => {
     try {
-      const response = await fetch(`http://localhost:8080/weather?city=${city}`);
+      const response = await fetch(`http://localhost:8080/weather?city=${cidade}`);
       const data = await response.text();
       setWeatherData(data);
     } catch (error) {
       setWeatherData('Erro ao buscar dados.');
     }
   };
+
+  // UseEffect para carregar os dados de Coronel Fabriciano ao abrir a página
+  useEffect(() => {
+    fetchWeather('Coronel Fabriciano');
+  }, []); // O array vazio [] garante que o efeito rode apenas uma vez ao carregar
 
   return (
     <AppContainer>
@@ -60,8 +66,8 @@ function App() {
         onChange={(e) => setCity(e.target.value)} 
         placeholder="Digite a cidade" 
       />
-      <Button onClick={fetchWeather}>Buscar</Button>
-      <Weather data={weatherData} />
+      <Button onClick={() => fetchWeather(city)}>Buscar</Button> {/* Busca a cidade digitada */}
+      <Weather data={weatherData} /> {/* Exibe os dados climáticos */}
     </AppContainer>
   );
 }
