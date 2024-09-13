@@ -1,8 +1,5 @@
 # Projeto FullStack - Aplicação de Consulta de Clima
 ## Este é um projeto fullstack que consulta a previsão do tempo para cidades utilizando uma API externa (Watherbit) e exibe os resultados em uma interface web desenvolvida com React. O backend foi construído com Spring Boot, enquanto o frontend foi implementado em React.
-#### Esse projeto foi desenvolvido para fins educacionais para a aplicação de 
-#### tecnologias e frameworks como Java, SpringBoot, React, JavaScript, Docker.
-### É um projeto piloto que está em fase de desenvolvimento.
 
 ### Funcionalidades
 * Consultar a previsão do tempo para qualquer cidade.
@@ -102,4 +99,4 @@ projeto-fullstack-clima/
 
 
 
-#### No arquivo src/main/resources/application.properties, adicione sua chave da API:
+#### No arquivo src/main/resources/application.properties, adicione sua chave da API.
